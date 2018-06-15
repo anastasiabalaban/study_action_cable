@@ -1,0 +1,13 @@
+<div id="messages" data-chat-room-id="<%= @chat_room.id %>">
+  <%= render @chat_room.messages %>
+</div>
+
+<%= form_for @message, url: '#' do |f| %>
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'form-control' %>
+    <small class="text-muted">From 1 to 500 characters</small>
+  </div>
+
+  <%= f.submit "Send", class: 'btn btn-primary btn-lg' %>
+<% end %>
